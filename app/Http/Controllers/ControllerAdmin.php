@@ -10,6 +10,7 @@ use App\Models\orders;
 use App\Models\slide;
 use App\Models\product_image;
 use Illuminate\Support\Facades\Session;
+use App\Http\Middleware\CheckAge;
 class ControllerAdmin extends Controller
 {
     public function management_user() {

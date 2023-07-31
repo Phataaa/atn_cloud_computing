@@ -25,10 +25,8 @@
           
             <li id="search"><i class="fa-solid fa-magnifying-glass"></i></li>
             <li><a href="{{route('index.cart')}}"><i class="fa-solid fa-cart-shopping"></i></a></li>
-            <li id="account">
-                <img src="{{asset('avatar/'.$user[0]->avatar)}}" alt="" srcset="">
-                <p>{{$user[0]->user_name}}</p>
-                <i class="fa-solid fa-caret-down"></i>
+            <li >
+                <a href="{{route('showLogin')}}">Sign In</a>
                
             </li>
         </ul>
@@ -39,7 +37,7 @@
         <ul>
             <li><a href="{{route('profile')}}">My account</a></li>
             <li><a href="{{route('index.order')}}">Order</a></li>
-            <li><a href="{{route('logout')}}">Logout</a></li>
+            <li><a href="{{route('logout')}}">Login</a></li>
         </ul>
     </header>
     <hr>

@@ -12,6 +12,7 @@ use App\Http\Controllers\ControllerSlide;
 use App\Http\Controllers\ControllerAccount;
 use App\Http\Controllers\ControllerCart;
 use App\Http\Controllers\ControllerOrder;
+use App\Http\Middleware\CheckLogin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,9 +24,9 @@ use App\Http\Controllers\ControllerOrder;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/layout', function() {
 //     return view('user.layout');
@@ -54,16 +55,17 @@ Route::get('Login', [ControllerAuth::class, 'showLogin'])->name('showLogin');
 Route::post('Login', [ControllerAuth::class, 'login'])->name('auth.login');
 Route::get('/auth/google', [ControllerAuth::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [ControllerAuth::class, 'handleGoogleCallback']);
-
+Route::get('/Logout', [ControllerAuth::class, 'logout'])->name('logout');
 
 // Admin
 Route::group(['prefix'=>'Admin'], function() {
-    Route::get('management_user', [ControllerAdmin::class, 'management_user'])->name('management_user');
-    Route::get('management_category', [ControllerAdmin::class, 'management_category'])->name('management_category');
-    Route::get('management_product', [ControllerAdmin::class, 'management_product'])->name('management_product');
-    Route::get('management_slide', [ControllerAdmin::class, 'management_slide'])->name('management_slide');
-    Route::get('management_order', [ControllerAdmin::class, 'management_order'])->name('management_order');
+    Route::get('management_user', [ControllerAdmin::class, 'management_user'])->name('management_user')->middleware(CheckLogin::class);
+    Route::get('management_category', [ControllerAdmin::class, 'management_category'])->name('management_category')->middleware(CheckLogin::class);
+    Route::get('management_product', [ControllerAdmin::class, 'management_product'])->name('management_product')->middleware(CheckLogin::class);
+    Route::get('management_slide', [ControllerAdmin::class, 'management_slide'])->name('management_slide')->middleware(CheckLogin::class);
+    Route::get('management_order', [ControllerAdmin::class, 'management_order'])->name('management_order')->middleware(CheckLogin::class);
 });
+
 Route::get('profile', [ControllerUser::class, 'profile'])->name('admin.profile');
 Route::get('edit_profile/{id}', [ControllerUser::class, 'editprofile'])->name('edit.profile');
 Route::post('update/{id}', [ControllerUser::class, 'update'])->name('update.profile');
@@ -71,7 +73,7 @@ Route::get('create_user', [ControllerUser::class, 'create_user'])->name('create_
 Route::post('update_account_buyer/{id}', [ControllerUser::class, 'update_account_buyer'])->name('update.profile_buyer');
 Route::post('delivery_order/{id}', [ControllerOrder::class, 'delivery_order'])->name('delivery.order');
 Route::get('edit_account/{id}', [ControllerUser::class, 'edit_account'])->name('edit.account');
-Route::post('edit_account/{id}', [ControllerUser::class, 'edit_account'])->name('update.account');
+Route::post('edit_account/{id}', [ControllerUser::class, 'update_account'])->name('update.account');
 
 
 
@@ -97,14 +99,14 @@ Route::get('search_category/{id}', [ControllerProduct::class, 'search_category']
 
 
 //Home
-Route::get('nam', [ControllerHome::class, 'index'])->name('index.nam');
+Route::get('home', [ControllerHome::class, 'index'])->name('index.nam');
 // Route::get('Slide', [ControllerHome::class, 'slide'])->name('slide.home');
 
 Route::get('search', [ControllerHome::class, 'search_product'])->name('product.search');
 
 Route::get('slide_create', [ControllerSlide::class, 'create'])->name('slide.create');
 Route::post('slide_create', [ControllerSlide::class, 'store'])->name('store.slide');
-Route::get('home', [ControllerSlide::class, 'index'])->name('slide.index');
+Route::get('', [ControllerSlide::class, 'index'])->name('slide.index');
 Route::post('feedback', [ControllerProduct::class, 'feedback'])->name('product.feedback');
 
 
@@ -116,3 +118,4 @@ Route::post('order', [ControllerOrder::class, 'store'])->name('product.order');
 Route::get('order', [ControllerOrder::class, 'index'])->name('index.order');
 
 
+Route::get('guest', [ControllerHome::class, 'guest'])->name('guest');

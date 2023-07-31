@@ -40,14 +40,14 @@ class ControllerCategory extends Controller
         if($request->isMethod('POST')) {
             $validator = Validator::make($request->all(), [
                 'name' => 'required',
-                'category' => 'required'
+               
             ]);
             if($validator->fails()){
                 return Redirect()->back()->withErrors($validator)->withInput();
             }
             $newCategory = new category();
             $newCategory->name = $request->name;
-            $newCategory->category = $request->category;
+       
             $newCategory->save();
             return Redirect()->route('management_category');
         }

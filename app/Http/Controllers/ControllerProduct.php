@@ -77,7 +77,7 @@ class ControllerProduct extends Controller
             $newProduct->gender = $request->gender;
             $newProduct->description = $request->description;
             $newProduct->price = $request->price;
-            $newProduct->user_id = $request->user;
+        
             $newProduct->save();
 
             $lastInsertedID = $newProduct->id;

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('user.guest.layout')
 @section('content')
 <style>
     .menu{

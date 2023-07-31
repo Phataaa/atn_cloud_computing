@@ -61,15 +61,14 @@
                     </div>
                     <div class="input-group input-group-outline mb-3">
                         <label class="form-label">Number</label>
-                        <input type="text" class="form-control" name="number" value="{{$user->numbe}}">
+                        <input type="text" class="form-control" name="number" value="{{$user->number}}">
                     </div>
                     <div>
-                        <label for="seller">Seller</label>
-                        <input type="radio" name="role" id="" value="seller" class="seller">
+                     
                         <label for="buyer">Buyer</label>
-                        <input type="radio" name="role" id="" value="buyer" class="seller">
+                        <input type="radio" name="role" id="" value="buyer" >
                         <label for="buyer">Admin</label>
-                        <input type="radio" name="role" id="" value="buyer" class="admin">
+                        <input type="radio" name="role" id="" value="admin">
                     </div>
                     <div class="form-check form-check-info text-start ps-0">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
@@ -78,7 +77,7 @@
                       </label>
                     </div>
                     <div class="text-center">
-                      <input type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0" value="Sign Up">
+                      <input type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0" value="Save change">
                     </div>
                   </form>
                 </div>

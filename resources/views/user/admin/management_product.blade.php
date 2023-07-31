@@ -74,7 +74,7 @@
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gender</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Category</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Seller</th>
+                      
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
@@ -118,9 +118,7 @@
                       <td class="align-middle text-center">
                         <span class="text-secondary text-xs font-weight-bold">{{$product->description}}</span>
                       </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">{{$product->user->user_name}}</span>
-                      </td>
+                    
                        <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-success"> <a href="{{route('edit.product', $product->id)}}"> Edit</a></span>
                         <span class="badge badge-sm bg-gradient-success"> <a href=""> Delete</a></span>

@@ -70,4 +70,8 @@ class ControllerAuth extends Controller
             return redirect()->route('index.home');
         }
     }
+    public function Logout() {
+        Session::flush();
+        return redirect('/Login');
+    }
 }

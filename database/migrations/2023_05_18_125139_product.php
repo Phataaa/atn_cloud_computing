@@ -24,8 +24,7 @@ return new class extends Migration
             $table->integer('price')->unsigned();
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('category');
-            $table->integer('user_id')->nullable()->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+           
             $table->timestamps();
         });
     }

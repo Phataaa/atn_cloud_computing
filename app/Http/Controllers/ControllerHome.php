@@ -21,11 +21,8 @@ class ControllerHome extends Controller
         $session = Session::get('email');
         $user = DB::table('users')->where('email', '=', $session)->get();
         $Product = product::all();
-        $Category_ao = DB::table('category')->where('category', '=', 'ao')->get();
-        $Category_quan = DB::table('category')->where('category', '=', 'quan')->get();
-        $Category_nha = DB::table('category')->where('category', '=', 'do mac nha')->get();
-        $Category_ngoai = DB::table('category')->where('category', '=', 'do mac ngoai')->get();
-        return view('user.buyer.nam', compact('user', 'Product', 'Category_ao', 'Category_quan','Category_nha', 'Category_ngoai'));
+        $Category = category::all();
+        return view('user.buyer.nam', compact('user', 'Product', 'Category'));
     }
    
     public function search_product(Request $request) {
@@ -107,5 +104,9 @@ class ControllerHome extends Controller
     {
         //
     }
-
+    public function guest() {
+        $Category = category::all();
+        $Product = product::all();
+        return view('user.guest.nam', compact('Category', 'Product'));
+    }
 }

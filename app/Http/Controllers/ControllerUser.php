@@ -189,7 +189,7 @@ class ControllerUser extends Controller
     public function update_account(Request $request, $id) {
         if($request->isMethod('Post')){
             $validator = Validator::make($request->all(), [
-                'username' => 'required',
+                'user_name' => 'required',
                 'number' => 'required',
                 'birthday' => 'required',
                 'email' => 'required|email',
@@ -201,12 +201,13 @@ class ControllerUser extends Controller
             else{
            
             $updateAccount = User::find($id);
-            $updateAccount->user_name = $request->username;
+            $updateAccount->user_name = $request->user_name;
             $updateAccount->email = $request->email;
             $updateAccount->birthday = $request->birthday;
             $updateAccount->role = $request->role;
             $updateAccount->number = $request->number;
             $updateAccount->save();
+            
         }
         }
     }

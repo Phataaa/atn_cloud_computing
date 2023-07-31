@@ -97,10 +97,10 @@
     }
 
     body{
-    height: auto;
-    width: 100%;
+        height: auto;
+        width: 100%;
       background-color: #F5F5F5;
-}
+     }
         .header{
             height: 100px;
             width: 100%;
@@ -128,8 +128,8 @@
             text-decoration: none;
             color: black;
         }
-        .header ul li:nth-of-type(5){
-            margin-right: 450px;
+        .header ul li:nth-of-type(2){
+            margin-right: 950px;
         }
 
         #account{
