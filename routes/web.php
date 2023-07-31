@@ -106,7 +106,7 @@ Route::get('search', [ControllerHome::class, 'search_product'])->name('product.s
 
 Route::get('slide_create', [ControllerSlide::class, 'create'])->name('slide.create');
 Route::post('slide_create', [ControllerSlide::class, 'store'])->name('store.slide');
-Route::get('', [ControllerSlide::class, 'index'])->name('slide.index');
+Route::get('Slide', [ControllerSlide::class, 'index'])->name('slide.index');
 Route::post('feedback', [ControllerProduct::class, 'feedback'])->name('product.feedback');
 
 
@@ -118,4 +118,4 @@ Route::post('order', [ControllerOrder::class, 'store'])->name('product.order');
 Route::get('order', [ControllerOrder::class, 'index'])->name('index.order');
 
 
-Route::get('guest', [ControllerHome::class, 'guest'])->name('guest');
+Route::get('', [ControllerHome::class, 'guest'])->name('guest');
