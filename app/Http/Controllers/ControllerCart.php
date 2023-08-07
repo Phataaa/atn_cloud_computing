@@ -17,7 +17,7 @@ class ControllerCart extends Controller
      */
     public function index()
     {
-        $Order_detail = order_detail::with('product')->whereNull('orders_id')->get();
+        $Order_detail = order_detail::with('product')->whereNull('order_id')->get();
         $session = Session::get('email');
         $user = DB::table('users')->where('email', '=', $session)->get();
         
