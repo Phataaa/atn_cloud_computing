@@ -106,7 +106,7 @@ Route::get('search', [ControllerHome::class, 'search_product'])->name('product.s
 
 Route::get('slide_create', [ControllerSlide::class, 'create'])->name('slide.create');
 Route::post('slide_create', [ControllerSlide::class, 'store'])->name('store.slide');
-Route::get('Slide', [ControllerSlide::class, 'index'])->name('slide.index');
+Route::get('advertisement', [ControllerSlide::class, 'index'])->name('slide.index');
 Route::post('feedback', [ControllerProduct::class, 'feedback'])->name('product.feedback');
 
 

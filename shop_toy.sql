@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2023 at 04:56 AM
+-- Generation Time: Aug 07, 2023 at 03:58 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -134,7 +134,7 @@ CREATE TABLE `order_detail` (
   `amount` int(10) UNSIGNED NOT NULL,
   `total` int(10) UNSIGNED NOT NULL,
   `product_id` int(10) UNSIGNED NOT NULL,
-  `order_id` int(10) UNSIGNED NOT NULL,
+  `order_id` int(10) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -195,7 +195,13 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `description`, `quanity`, `brand`, `color`, `gender`, `price`, `category_id`, `created_at`, `updated_at`) VALUES
-(1, 'Mô Hình Trang Trí One Piece - LUFFY DOUBLE G - 24CM', 'Đẹp', 'Cao', 'YSL', 'Cam', 'Nam', 250, 1, '2023-07-30 12:59:28', '2023-07-30 12:59:28');
+(1, 'Mô Hình Trang Trí One Piece - LUFFY DOUBLE G - 24CM', 'Chất lương cao, an toàn', 'Cao', 'YSL', 'Cam', 'Nam', 250, 1, '2023-07-30 12:59:28', '2023-08-06 18:13:08'),
+(2, 'Đồ chơi búp bê barbie elsa cho bé gái chính hãng', 'Chat luong cao', 'Cao', 'YSL', 'Trăng', 'Nam', 100, 2, '2023-08-06 17:15:49', '2023-08-06 17:15:49'),
+(3, 'Xe ô tô điện cho trẻ em 1 2 4 chỗ ngồi', 'Chat luong cao', 'Cao', 'YSL', 'Đen', 'Nam', 100, 3, '2023-08-06 17:18:59', '2023-08-06 17:18:59'),
+(4, 'Đồ chơi gỗ mô hình thành phố tương lai nhập vai sáng tạo | Đồ chơi gỗ KENDOTOY', 'Chat luong cao', 'Cao', 'YSL', 'Cam', 'Nam', 40, 1, '2023-08-06 17:23:50', '2023-08-06 17:23:50'),
+(5, 'Búp Bê Công Chúa', 'Chat luong cao', 'Cao', 'YSL', 'Trăng', 'Nữ', 30, 2, '2023-08-06 18:01:12', '2023-08-06 18:01:12'),
+(6, 'Đồ chơi xe oto điện', 'Chat luong cao', 'Cao', 'YSL', 'Đỏ', 'Nam', 150, 3, '2023-08-06 18:06:30', '2023-08-06 18:06:30'),
+(7, 'Mô hình Megahouse', 'Chat luong cao', 'Cao', 'Megahouse', 'Trăng', 'Nam', 200, 1, '2023-08-06 18:20:16', '2023-08-06 18:20:16');
 
 -- --------------------------------------------------------
 
@@ -216,7 +222,13 @@ CREATE TABLE `product_image` (
 --
 
 INSERT INTO `product_image` (`id`, `path`, `product_id`, `created_at`, `updated_at`) VALUES
-(1, '1690747168_z3717618730313_11ab5e1de2e721dd216b6a090d39d244.jpg', 1, '2023-07-30 12:59:28', '2023-07-30 12:59:28');
+(1, '1690747168_z3717618730313_11ab5e1de2e721dd216b6a090d39d244.jpg', 1, '2023-07-30 12:59:28', '2023-07-30 12:59:28'),
+(2, '1691367349_bup-be-16-cm-tai-tho-dang-yeu-062-1626328965-eacd77.jpg', 2, '2023-08-06 17:15:49', '2023-08-06 17:15:49'),
+(3, '1691367539_tải xuống.jpg', 3, '2023-08-06 17:18:59', '2023-08-06 17:18:59'),
+(4, '1691367830_do-choi-go-thanh-pho-tuong-lai-2.jpg', 4, '2023-08-06 17:23:50', '2023-08-06 17:23:50'),
+(5, '1691370072_tải xuống (1).jpg', 5, '2023-08-06 18:01:12', '2023-08-06 18:01:12'),
+(6, '1691370390_BY-YW9988.jpg', 6, '2023-08-06 18:06:30', '2023-08-06 18:06:30'),
+(7, '1691371216_megahouse-1.jpg', 7, '2023-08-06 18:20:16', '2023-08-06 18:20:16');
 
 -- --------------------------------------------------------
 
@@ -410,13 +422,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `product_image`
 --
 ALTER TABLE `product_image`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `slide`

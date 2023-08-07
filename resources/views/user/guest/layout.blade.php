@@ -21,7 +21,7 @@
         <div class="header" id="header">
         <ul>
             <li><a href="{{route('slide.index')}}"><img src="https://1000logos.net/wp-content/uploads/2022/08/Uniqlo-logo.png" alt="" srcset="" ></a></li>
-            <li><a href="{{route('index.nam')}}">HOME</a></li>
+            <li><a href="{{route('guest')}}">HOME</a></li>
           
             <li id="search"><i class="fa-solid fa-magnifying-glass"></i></li>
             <li><a href="{{route('index.cart')}}"><i class="fa-solid fa-cart-shopping"></i></a></li>
